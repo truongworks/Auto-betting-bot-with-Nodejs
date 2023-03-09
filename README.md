@@ -1,4 +1,4 @@
+# demo - scrapy framework
 Request:
-  1. Node.js
-  2. MySQL
-  3. Puppeeter
+  1. Auto login
+  2. Crawl data

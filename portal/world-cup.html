@@ -1,0 +1,2074 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>RedBolt</title>
+  <!-- Simple bar CSS -->
+  <link rel="stylesheet" href="css/simplebar.css">
+  <!-- Fonts CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Icons CSS -->
+  <link rel="stylesheet" href="css/feather.css">
+  <link rel="stylesheet" href="css/select2.css">
+  <link rel="stylesheet" href="css/dropzone.css">
+  <link rel="stylesheet" href="css/uppy.min.css">
+  <link rel="stylesheet" href="css/jquery.steps.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/quill.snow.css">
+  <!-- Date Range Picker CSS -->
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+  <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+</head>
+
+<body class="vertical light">
+  <div class="wrapper">
+    <header class="blog-header custom-header">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a href="home.html"><img src="assets/images/Logo_original.svg" width="150px"></a>
+        </div>
+        <div class="col-4 text-center d-none">
+          <nav class="custom-bets">
+            <div class="nav nav-fill justify-content-center" id="nav-tab" role="tablist">
+              <a class="nav-item custom-nav-item-pd header-navtabs-sport active" id="nav-home-tab" data-toggle="tab"
+                href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">THỂ THAO</a>
+              <a class="nav-item custom-nav-item-pd header-navtabs-casino" id="nav-profile-tab" data-toggle="tab"
+                href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">SÒNG BẠC</a>
+            </div>
+          </nav>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <ul class="nav">
+            <li class="nav-item nav-notif">
+              <a class="nav-link text-muted my-2 pd-0" href="./home.html" data-toggle="modal"
+                data-target=".modal-shortcut">
+                <span class="fe fe-grid fe-16 custom-fe"></span>
+              </a>
+              <a class="nav-link text-muted my-2 pd-0 d-none" href="./home.html" data-toggle="modal"
+                data-target=".modal-best">
+                $0.00
+              </a>
+            </li>
+          </ul>
+          <ul class="nav">
+            <li class="nav-item dropdown show">
+              <a class="nav-link dropdown-toggle text-muted pr-0" href="home.html" id="navbarDropdownMenuLink"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span class="avatar avatar-sm mt-2">
+                  <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="home.html">Thông tin</a>
+                <a class="dropdown-item" href="home.html">Cài đặt</a>
+                <a class="dropdown-item" href="dashboard-bets.html">Quản lý Bets</a>
+                <a class="dropdown-item" href="transaction-history.html">Lịch sử giao dịch</a>
+                <a class="dropdown-item" href="home.html">Đăng xuất</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <nav class="topnav navbar navbar-light d-none">
+      <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar d-none">
+        <i class="fe fe-menu navbar-toggler-icon"></i>
+      </button>
+      <form class="form-inline mr-auto searchform text-muted">
+        <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search"
+          placeholder="Type something..." aria-label="Search">
+      </form>
+      <ul class="nav">
+        <li class="nav-item d-none">
+          <a class="nav-link text-muted my-2" href="home.html" id="modeSwitcher" data-mode="light">
+            <i class="fe fe-sun fe-16"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-muted my-2" href="./home.html" data-toggle="modal" data-target=".modal-shortcut">
+            <span class="fe fe-grid fe-16"></span>
+          </a>
+        </li>
+        <li class="nav-item nav-notif">
+          <a class="nav-link text-muted my-2" href="./home.html" data-toggle="modal" data-target=".modal-notif">
+            <span class="fe fe-bell fe-16"></span>
+            <span class="dot dot-md bg-success"></span>
+          </a>
+        </li>
+        <li class="nav-item nav-notif">
+          <a class="nav-link text-muted my-2" href="./home.html" data-toggle="modal" data-target=".modal-notif">
+            <span class="fe fe-bell fe-16"></span>
+            <span class="dot dot-md bg-success"></span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-muted pr-0" href="home.html" id="navbarDropdownMenuLink" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar avatar-sm mt-2">
+              <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="home.html">Profile</a>
+            <a class="dropdown-item" href="home.html">Settings</a>
+            <a class="dropdown-item" href="home.html">Activities</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <nav class="custom-width-nav">
+      <div class="nav nav-tabs nav-fill justify-content-center" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link custom-nav-item-pd active" href="home.php"><img src="assets/images/soccer-ball.png" width="25px" class="mr-2">Bóng đá & Bóng rổ</a>
+        <!-- <a class="nav-item nav-link custom-nav-item-pd" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+          role="tab" aria-controls="nav-profile" aria-selected="false">
+          <img src="assets/images/rugby-ball.png" width="25px" class="mr-2">Bóng bầu dục</a>
+        <a class="nav-item nav-link d-none custom-nav-item-pd" id="nav-contact-tab" data-toggle="tab"
+          href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+          <img src="assets/images/basketball.png" width="25px" class="mr-2">Bóng rổ</a>
+        <a class="nav-item nav-link d-none custom-nav-item-pd" id="nav-about-tab" data-toggle="tab" href="#nav-about"
+          role="tab" aria-controls="nav-about" aria-selected="false">
+          <img src="assets/images/ball.png" width="25px" class="mr-2">Bóng chày</a> -->
+      </div>
+    </nav>
+    <div class="tab-content py-0 px-3 px-sm-0 background-all-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <main role="main" class="main-content">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <!-- .row -->
+                <div class="row">
+                  <!-- Recent Activity -->
+                  <div class="col-md-12 col-lg-3 mb-4 left-main-content">
+                    <!-- <div class="flex-nowrap justify-content-between align-items-center left-header">
+                        <div class="col-9 pd-0">Các cuộc thi phổ biến</div> 
+                        <div class="col-2 pd-0 d-flex justify-content-end align-items-center">
+                          asd
+                        </div>
+                      </div>
+                      <ul class="card timeline shadow custom-ul-dropdown">
+                        <li class="content-li-custom"><a href="home.html">NFL</a></li>
+                        <li class="content-li-custom"><a href="home.html">NCAA Football</a></li>
+                      </ul> -->
+                      <div class="border p-3 rounded mb-3">
+                        <div class="div">
+                          <div class="form-group has-search">
+                            <span class="fe fe-24 fe-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm . . . .">
+                          </div>
+                        </div>
+                        <div class="div">
+                          <nav class="custom-bets nav-tab-bets">
+                            <div class="nav nav-fill justify-content-center content-bets" id="nav-tab" role="tablist">
+                              <a class="nav-item custom-nav-item-pd custom-a-bets right-content active"
+                                id="nav-phieucuoc-tab" data-toggle="tab" href="#nav-phieucuoc" role="tab"
+                                aria-controls="nav-phieucuoc" aria-selected="true">Phiếu Cược</a>
+                              <a class="nav-item custom-nav-item-pd custom-a-bets nav-tow-content" id="nav-bets-tab"
+                                data-toggle="tab" href="#nav-bets" role="tab" aria-controls="nav-bets"
+                                aria-selected="false">Bets</a>
+                            </div>
+                          </nav>
+                          <div class="tab-content py-3 px-3 px-sm-0 custom-bg-light" id="nav-tabContent">
+                            <div class="tab-pane fade show right-content text-center active" id="nav-phieucuoc"
+                              role="tabpanel" aria-labelledby="nav-phieucuoc-tab">
+                              <span class="mb-1">Phiếu cược trống</span><br><span>Không biết chắc nên bắt đầu từ
+                                đâu?</span>
+                            </div>
+                            <div class="tab-pane fade right-content text-center show" id="nav-bets" role="tabpanel"
+                              aria-labelledby="nav-bets-tab">
+                              Bets
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <nav class="vertnav navbar navbar-light custom-ul-dropdown-left px-0 pd-t-0">
+                      <ul class="navbar-nav flex-fill w-100 mb-2">
+                        <li class="nav-item">
+                          <a href="#dashboard" class="dropdown-toggle left-header nav-link collapsed">
+                            <span class="ml-2 item-text">Các cuộc thi phổ biến</span><span
+                              class="sr-only">(current)</span>
+                          </a>
+                          <ul class="shadow custom-ul-dropdown">
+                            <li class="nav-item active custom-td-bets custom-nav-link">
+                              <a class="nav-link pl-3" href="world-cup.html">
+                                <img src="assets/images/world_cup_2023_logo.jpg" width="40px" width="40px"><span
+                                  class="ml-1 item-text">World Cup</span>
+                              </a>
+                            </li>
+                            <li class="nav-item custom-td-bets custom-nav-link">
+                              <a class="nav-link pl-3" href="english-premier-league.html"><img src="assets/images/premier.jpg"
+                                  width="39px" height="39px"><span class="ml-1 item-text">English Premier
+                                  League</span></a>
+                            </li>
+                            <li class="nav-item custom-td-bets custom-nav-link">
+                              <a class="nav-link pl-3" href="spanish-la-liga.html"><img src="assets/images/la-liga.png"
+                                  width="30px" height="30px" class="ml-1"><span class=" ml-2 item-text">Spanish La
+                                Liga</span></a>
+                            </li>
+                            <li class="nav-item custom-td-bets custom-nav-link">
+                              <a class="nav-link pl-3" href="germany-bundesliga.html"><img
+                                  src="assets/images/German-Bundesliga-Logo-2002.png" width="30px" height="30px"
+                                  class="ml-1 mr-1"><span class="ml-1 item-text">Germany
+                                  Bundesliga</span></a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+
+                    <!-- / .card -->
+                    <!-- / .col-md-6 -->
+                    <!-- Striped rows -->
+                    <!-- Striped rows -->
+                    <!-- .row-->
+                  </div>
+                  <div class="col-md-12 col-lg-9 mb-4 right-main-content">
+                    <div class="d-inline-flex align-items-center justify-content-start py-2 pr-3 toggle-sidebar-btn" style="cursor:pointer">
+                      <i class="fe fe-chevron-left"></i>
+                      <span class="toggle-btn-text mr-1">Thu gọn</span>sidebar
+                    </div>
+                    <div class="d-none">
+                      <div class="card-head text-center">
+                        <h1>
+                          LIGA MX BETTING <span class="custom-title-head">ODDS</span>
+                        </h1>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-md-12 col-lg-2"></div>
+                        <div class="col-md-12 col-lg-4">
+                          <select class="select-option" id="example-select">
+                            <option>Mexico</option>
+                            <option>Mexico</option>
+                            <option>Mexico</option>
+                            <option>Mexico</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                          <select class="select-option" id="example-select">
+                            <option>Liga MX</option>
+                            <option>Liga MX</option>
+                            <option>Liga MX</option>
+                            <option>Liga MX</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12 col-lg-2"></div>
+                      </div>
+                      <div class="col-md-4 col-lg-4 pd-0">
+                        <nav class="soccer-nav-tabs">
+                          <div class="nav soccer-nav-tabs soccer-nav-fill justify-content-left" id="nav-tab"
+                            role="tablist">
+                            <a class="soccer-nav-item soccer-nav-link active" id="nav-home-tab" data-toggle="tab"
+                              href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                              <img src="assets/images/soccer-ball.png" width="25px" class="mr-2">Bóng đá</a>
+                          </div>
+                        </nav>
+                      </div>
+                    </div>
+                    <div class="tab-content py-0 px-3 px-sm-0 background-all-content table-soccer" id="nav-tabContent"
+                      style="overflow-x: auto;">
+                      <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                        aria-labelledby="nav-home-tab">
+                        <!-- table -->
+                        <table class="table table-hover">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">Ngày Giờ</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">Bảng</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">Trận</th>
+                              <th></th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">liveactionbets.com</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">pig11.com</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">3funplay.com</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">sbobet.com</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">2bet.ag</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">playsports365.com </th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">Ibet.ag</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">8platinum.com</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">allwagers247.com</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">Betsbank.com</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title">lasvegassb.com</th>
+                              <th class="text-center font-title text-uppercase nowrap-text font-title th-custom">5plays.com</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="accordion-toggle collapsed tr-custom-table" id="c-2474" data-toggle="collapse"
+                              data-parent="#c-2474" href="#collap-2474">
+                              <td class="text-center nowrap-text">Chủ nhật, 20/11/2022<br>23:00</td>
+                              <td class="text-center" style="font-size: 18px; font-weight:600;min-width: 100px">A</td>
+                              <td class="nowrap-text text-center row custom-td-battle background-all-td">
+                                <div class="col-5">
+                                  <img src="assets/images/qata.jpg" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2" style="line-height:1.2; white-space: normal;">Qatar</div>
+                                </div>
+                                <div class="col-2" style="line-height: 65px; font-weight: bold;">VS</div>
+                                <div class="col-5">
+                                  <img src="assets/images/ecuador.jpg" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2" style="line-height:1.2; white-space: normal;">Ecuador</div>
+                                </div>
+                              </td>
+                              <td></td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modalDiscount">
+                                <div class="offline-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Chưa kích hoạt">
+                                  <span class="blink-offline"></span>
+                                </div>3.95<br>
+                                <img src="assets/images/liveaction_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-pig11">
+                                <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Đang live">
+                                  <span class="blink"></span>
+                                </div>3.02<br>
+                                <img src="assets/images/pig11_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-3funplay">
+                                <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Đang live">
+                                  <span class="blink"></span>
+                                </div>2.85<br>
+                                <img src="assets/images/3fun_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-sbobet">
+                                <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Đang live">
+                                  <span class="blink"></span>
+                                </div>2.96<br>
+                                <img src="assets/images/SBOBET_company_logo.jpg" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-2bet">
+                                <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                  <span class="blink-warning btn-warning"></span>
+                                
+                                </div>3.05<br>
+                                <img src="assets/images/2bet.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-playsport-365">
+                                <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Đang live">
+                                  <span class="blink"></span>
+                                </div>2.45<br>
+                                <img src="assets/images/playsport-365.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-ibet">
+                                <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                  <span class="blink-offline"></span>
+                                
+                                </div>2.15<br>
+                                <img src="assets/images/ibet.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-8platinum">
+                                <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Đang live">
+                                  <span class="blink"></span>
+                                </div>2.65<br>
+                                <img src="assets/images/8platinum.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-allwagers247">
+                                <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                  <span class="blink-offline"></span>
+                                </div>2.46<br>
+                                <img src="assets/images/allwagers247_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-8platinum">
+                                <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Đang live">
+                                  <span class="blink"></span>
+                                </div>2.25<br>
+                                <img src="assets/images/bet.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-8platinum">
+                                <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                  <span class="blink-warning btn-warning"></span>
+                                </div>3.15<br>
+                                <img src="assets/images/bet.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modalDiscount"><div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                  <span class="blink-warning btn-warning"></span>
+                                </div>2.45<br>
+                                <img src="assets/images/5plays_logo.png" height="25"></small>
+                              </td>
+                            </tr>
+                            <tr class="accordion-toggle collapsed tr-custom-table" id="c-2474" data-toggle="collapse"
+                              data-parent="#c-2474" href="#collap-2474">
+                              <td class="text-center nowrap-text">Thứ 2, 21/11/2022<br>20:00</td>
+                              <td class="text-center" style="font-size: 18px; font-weight:600;">B</td>
+                              <td class="nowrap-text text-center row background-all-td">
+                                <div class="col-5">
+                                  <img src="assets/images/anh.png" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2" style="line-height:1.2; white-space: normal;">Anh</div>
+                                </div>
+                                <div class="col-2" style="line-height: 65px; font-weight: bold;">VS</div>
+                                <div class="col-5">
+                                  <img src="assets/images/iran.png" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2" style="line-height:1.2; white-space: normal;">Iran</div>
+                                </div>
+                              </td>
+                              <td></td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modalDiscount">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>3.08<br><img src="assets/images/liveaction_logo.png" height="25"></small>
+                            </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-pig11">
+                                <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Đang live">
+                                  <span class="blink"></span>
+                                </div>2.90<br>
+                                <img src="assets/images/pig11_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-3funplay">
+                                <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top"
+                                  title="Có lỗi">
+                                  <span class="blink-warning btn-warning"></span>
+                                </div>4.2<br>
+                                <img src="assets/images/3fun_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-sbobet">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.95<br>
+                              <img src="assets/images/SBOBET_company_logo.jpg" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-2bet">
+                              <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              
+                              </div>3.05<br>
+                              <img src="assets/images/2bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-playsport-365">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>3.85<br>
+                              <img src="assets/images/playsport-365.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-ibet">
+                              <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                <span class="blink-offline"></span>
+                              
+                              </div>2.35<br>
+                              <img src="assets/images/ibet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.65<br>
+                              <img src="assets/images/8platinum.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-allwagers247">
+                              <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                <span class="blink-offline"></span>
+                              </div>2.35<br>
+                              <img src="assets/images/allwagers247_logo.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.35<br>
+                              <img src="assets/images/bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              </div>3.28<br>
+                              <img src="assets/images/bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modalDiscount"><div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              </div>2.16<br>
+                              <img src="assets/images/5plays_logo.png" height="25"></small>
+                            </td>
+                            </tr>
+                            <tr class="accordion-toggle collapsed tr-custom-table" id="c-2474" data-toggle="collapse"
+                              data-parent="#c-2474" href="#collap-2474">
+                              <td class="text-center nowrap-text">Thứ 2, 21/11/2022<br>20:00</td>
+                              <td class="text-center" style="font-size: 18px; font-weight:600;">A</td>
+                              <td class="nowrap-text text-center row background-all-td">
+                                <div class="col-5">
+                                  <img src="assets/images/sene.png" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2" style="line-height:1.2; white-space: normal;">Sénégal</div>
+                                </div>
+                                <div class="col-2" style="line-height: 65px; font-weight: bold;">VS</div>
+                                <div class="col-5">
+                                  <img src="assets/images/ha-lan.jpg" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2" style="line-height:1.2; white-space: normal;">Hà Lan</div>
+                                </div>
+                              </td>
+                              <td></td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modalDiscount">
+                                <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Đang live">
+                                  <span class="blink"></span>
+                                </div>3.7<br>
+                                <img src="assets/images/liveaction_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-pig11"><span>
+                                  <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top"
+                                    title="Có lỗi">
+                                    <span class="blink-warning btn-warning"></span>
+                                  </div>2.3
+                                </span><br>
+                                <img src="assets/images/pig11_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-3funplay">
+                                <div class="offline-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Chưa kích hoạt">
+                                  <span class="blink-offline"></span>
+                                </div>3.3<br>
+                                <img src="assets/images/3fun_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-sbobet">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.95<br>
+                              <img src="assets/images/SBOBET_company_logo.jpg" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-2bet">
+                              <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              
+                              </div>3.25<br>
+                              <img src="assets/images/2bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-playsport-365">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.75<br>
+                              <img src="assets/images/playsport-365.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-ibet">
+                              <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                <span class="blink-offline"></span>
+                              
+                              </div>2.85<br>
+                              <img src="assets/images/ibet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.65<br>
+                              <img src="assets/images/8platinum.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-allwagers247">
+                              <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                <span class="blink-offline"></span>
+                              </div>2.35<br>
+                              <img src="assets/images/allwagers247_logo.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.26<br>
+                              <img src="assets/images/bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              </div>3.30<br>
+                              <img src="assets/images/bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modalDiscount"><div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              </div>2.55<br>
+                              <img src="assets/images/5plays_logo.png" height="25"></small>
+                            </td>
+                            </tr>
+                            <tr class="accordion-toggle collapsed tr-custom-table" id="c-2474" data-toggle="collapse"
+                              data-parent="#c-2474" href="#collap-2474">
+                              <td class="text-center nowrap-text">Thứ 2, 21/11/2022<br>20:00</td>
+                              <td class="text-center" style="font-size: 18px; font-weight:600;">B</td>
+                              <td class="nowrap-text text-center row background-all-td">
+                                <div class="col-5">
+                                  <img src="assets/images/hoaky.jpg" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2" style="line-height:1.2; white-space: normal;">Hoa Kỳ</div>
+                                </div>
+                                <div class="col-2" style="line-height: 65px; font-weight: bold;">VS</div>
+                                <div class="col-5">
+                                  <img src="assets/images/wales.png" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2" style="line-height:1.2; white-space: normal;">Wales</div>
+                                </div>
+                              </td>
+                              <td></td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modalDiscount">
+                                <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top"
+                                  title="Có lỗi">
+                                  <span class="blink-warning btn-warning"></span>
+                                </div>3.1<br>
+                                <img src="assets/images/liveaction_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-pig11">
+                                <div class="offline-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Chưa kích hoạt">
+                                  <span class="blink-offline"></span>
+                                </div>2.8<br>
+                                <img src="assets/images/pig11_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-3funplay">
+                                <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                  title="Đang live">
+                                  <span class="blink"></span>
+                                </div>4.3<br>
+                                <img src="assets/images/3fun_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-sbobet">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.95<br>
+                              <img src="assets/images/SBOBET_company_logo.jpg" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-2bet">
+                              <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              
+                              </div>3.35<br>
+                              <img src="assets/images/2bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-playsport-365">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>3.80<br>
+                              <img src="assets/images/playsport-365.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-ibet">
+                              <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                <span class="blink-offline"></span>
+                              
+                              </div>2.15<br>
+                              <img src="assets/images/ibet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.65<br>
+                              <img src="assets/images/8platinum.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-allwagers247">
+                              <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                <span class="blink-offline"></span>
+                              </div>2.32<br>
+                              <img src="assets/images/allwagers247_logo.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.28<br>
+                              <img src="assets/images/bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              </div>3.16<br>
+                              <img src="assets/images/bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modalDiscount"><div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              </div>2.15<br>
+                              <img src="assets/images/5plays_logo.png" height="25"></small>
+                            </td>
+                            </tr>
+                            <tr class="accordion-toggle collapsed tr-custom-table" id="c-2474" data-toggle="collapse"
+                              data-parent="#c-2474" href="#collap-2474">
+                              <td class="text-center nowrap-text">Thứ 2, 21/11/2022<br>20:00</td>
+                              <td class="text-center" style="font-size: 18px; font-weight:600;">A</td>
+                              <td class="nowrap-text text-center row background-all-td">
+                                <div class="col-5">
+                                  <img src="assets/images/argentina.png" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2" style="line-height:1.2; white-space: normal;">Argentina</div>
+                                </div>
+                                <div class="col-2" style="line-height: 65px; font-weight: bold;">VS</div>
+                                <div class="col-5">
+                                  <img src="assets/images/a-rap-xe-ut.png" width="50px" height="50px">
+                                  <div class="team-name text-center mt-2 nowrap-text" style="line-height:1.2;">Ả rập Xê Út</div>
+                                </div>
+                              </td>
+                              <td></td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modalDiscount">
+                              <div class="offline-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Chưa kích hoạt">
+                                <span class="blink-offline"></span>
+                              </div>3.5<br>
+                              <img src="assets/images/liveaction_logo.png" height="25"></small>
+                            </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-pig11"><span>
+                                  <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                    title="Đang live">
+                                    <span class="blink"></span>
+                                  </div>4.2
+                                </span><br>
+                                <img src="assets/images/pig11_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                                data-target="#modaldetail-3funplay">
+                                <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top"
+                                  title="Có lỗi">
+                                  <span class="blink-warning btn-warning"></span>
+                                </div>2.7<br>
+                                <img src="assets/images/3fun_logo.png" height="25"></small>
+                              </td>
+                              <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-sbobet">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.29<br>
+                              <img src="assets/images/SBOBET_company_logo.jpg" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-2bet">
+                              <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              
+                              </div>3.06<br>
+                              <img src="assets/images/2bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-playsport-365">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.55<br>
+                              <img src="assets/images/playsport-365.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-ibet">
+                              <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                <span class="blink-offline"></span>
+                              
+                              </div>2.15<br>
+                              <img src="assets/images/ibet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.65<br>
+                              <img src="assets/images/8platinum.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-allwagers247">
+                              <div class="offline-indicator" data-toggle="tooltip" data-placement="top" title="" data-original-title="Chưa kích hoạt">
+                                <span class="blink-offline"></span>
+                              </div>2.36<br>
+                              <img src="assets/images/allwagers247_logo.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="online-indicator" data-toggle="tooltip" data-placement="top"
+                                title="Đang live">
+                                <span class="blink"></span>
+                              </div>2.30<br>
+                              <img src="assets/images/bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modaldetail-8platinum">
+                              <div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              </div>3.15<br>
+                              <img src="assets/images/bet.png" height="25"></small>
+                            </td>
+                            <td class="nowrap-text text-center custom-td-bets" data-toggle="modal"
+                              data-target="#modalDiscount"><div class="warning-indicator btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Có lỗi">
+                                <span class="blink-warning btn-warning"></span>
+                              </div>2.15<br>
+                              <img src="assets/images/5plays_logo.png" height="25"></small>
+                            </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div> <!-- .row -->
+              </div> <!-- .container-fluid -->
+
+              <!--Modal chi tiet liveactionbets.com-->
+              
+              <!--Modal chi tiet liveactionbets.com-->
+              <div class="modal fade right" id="modalDiscount" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+                <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading">Chi tiết</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text custom-close">&times;</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-4 pd-r-0">
+                          <br>
+                          <img src="assets/images/liveaction_logo.png" width="150px" height="80px">
+                        </div>
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Ngày-Giờ:</span><br>
+                              <p> 12/09/2022 <br> 11:21:03</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trận đấu:</span><br>
+                              <p> M.U <br>Chelsea</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Tỉ lệ cược:</span><br>
+                                <p>15%</p>
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trạng thái:</span><br>
+                                <p> Đang hoạt động</p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer flex-center">
+                      <!-- <a href="https://mdbootstrap.com/docs/standard/pro/" class="btn btn-danger">Đóng
+                        <i class="far fa-gem ml-1 white-text"></i>
+                      </a> -->
+                      <a type="button" class="btn btn-danger color-close" data-dismiss="modal">Đóng</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+
+               <!-- modal chi tiet pig11.com -->
+              <div class="modal fade right" id="modaldetail-pig11" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+                <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading">Chi tiết</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text custom-close">&times;</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-4 pd-r-0">
+                          <br>
+                          <img src="assets/images/pig11_logo.png" width="130px" height="80px">
+                        </div>
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Ngày-Giờ:</span><br>
+                              <p> 12/09/2022 <br> 11:21:03</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trận đấu:</span><br>
+                              <p> M.U <br>Chelsea</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Tỉ lệ cược:</span><br>
+                                <p>15%</p>
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trạng thái:</span><br>
+                                <p> Đang hoạt động</p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer flex-center">
+                      <!-- <a href="https://mdbootstrap.com/docs/standard/pro/" class="btn btn-danger">Đóng
+                        <i class="far fa-gem ml-1 white-text"></i>
+                      </a> -->
+                      <a type="button" class="btn btn-danger color-close" data-dismiss="modal">Đóng</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+
+              <!-- modal chi tiet 3FUNPLAY.COM -->
+              <div class="modal fade right" id="modaldetail-3funplay" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+                <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading">Chi tiết</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text custom-close">&times;</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-4 pd-r-0">
+                          <br>
+                          <img src="assets/images/3fun_logo.png" width="130px" height="80px">
+                        </div>
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Ngày-Giờ:</span><br>
+                              <p> 12/09/2022 <br> 11:21:03</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trận đấu:</span><br>
+                              <p> M.U <br>Chelsea</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Tỉ lệ cược:</span><br>
+                                <p>15%</p>
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trạng thái:</span><br>
+                                <p> Đang hoạt động</p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer flex-center">
+                      <!-- <a href="https://mdbootstrap.com/docs/standard/pro/" class="btn btn-danger">Đóng
+                        <i class="far fa-gem ml-1 white-text"></i>
+                      </a> -->
+                      <a type="button" class="btn btn-danger color-close" data-dismiss="modal">Đóng</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+
+              <!-- modal chi tiet SBOBET.COM -->
+              <div class="modal fade right" id="modaldetail-sbobet" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+                <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading">Chi tiết</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text custom-close">&times;</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-4 pd-r-0">
+                          <br>
+                          <img src="assets/images/SBOBET_company_logo.jpg" width="130px" height="80px">
+                        </div>
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Ngày-Giờ:</span><br>
+                              <p> 12/09/2022 <br> 11:21:03</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trận đấu:</span><br>
+                              <p> M.U <br>Chelsea</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Tỉ lệ cược:</span><br>
+                                <p>15%</p>
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trạng thái:</span><br>
+                                <p> Đang hoạt động</p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer flex-center">
+                      <!-- <a href="https://mdbootstrap.com/docs/standard/pro/" class="btn btn-danger">Đóng
+                        <i class="far fa-gem ml-1 white-text"></i>
+                      </a> -->
+                      <a type="button" class="btn btn-danger color-close" data-dismiss="modal">Đóng</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+
+              <!-- modal chi tiet 2BET.AG -->
+              <div class="modal fade right" id="modaldetail-2bet" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+                <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading">Chi tiết</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text custom-close">&times;</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-4 pd-r-0">
+                          <br>
+                          <img src="assets/images/2bet.png" width="130px" height="80px">
+                        </div>
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Ngày-Giờ:</span><br>
+                              <p> 12/09/2022 <br> 11:21:03</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trận đấu:</span><br>
+                              <p> M.U <br>Chelsea</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Tỉ lệ cược:</span><br>
+                                <p>15%</p>
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trạng thái:</span><br>
+                                <p> Đang hoạt động</p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer flex-center">
+                      <!-- <a href="https://mdbootstrap.com/docs/standard/pro/" class="btn btn-danger">Đóng
+                        <i class="far fa-gem ml-1 white-text"></i>
+                      </a> -->
+                      <a type="button" class="btn btn-danger color-close" data-dismiss="modal">Đóng</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+
+              <!-- modal chi tiet PLAYSPORTS365.COM	 -->
+              <div class="modal fade right" id="modaldetail-playsport-365" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+                <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading">Chi tiết</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text custom-close">&times;</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-4 pd-r-0">
+                          <br>
+                          <img src="assets/images/playsport-365.png" width="150px" height="80px">
+                        </div>
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Ngày-Giờ:</span><br>
+                              <p> 12/09/2022 <br> 11:21:03</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trận đấu:</span><br>
+                              <p> M.U <br>Chelsea</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Tỉ lệ cược:</span><br>
+                                <p>15%</p>
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trạng thái:</span><br>
+                                <p> Đang hoạt động</p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer flex-center">
+                      <!-- <a href="https://mdbootstrap.com/docs/standard/pro/" class="btn btn-danger">Đóng
+                        <i class="far fa-gem ml-1 white-text"></i>
+                      </a> -->
+                      <a type="button" class="btn btn-danger color-close" data-dismiss="modal">Đóng</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+
+              <!-- modal chi tiet IBET.AG	 -->
+              <div class="modal fade right" id="modaldetail-ibet" tabindex="-1" role="dialog"
+               aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+               <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+                 <!--Content-->
+                 <div class="modal-content">
+                   <!--Header-->
+                   <div class="modal-header custom-header-modal">
+                     <div class="heading">Chi tiết</div>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true" class="white-text custom-close">&times;</span>
+                     </button>
+                   </div>
+                   <!--Body-->
+                   <div class="modal-body">
+                     <div class="row">
+                       <div class="col-4 pd-r-0">
+                         <br>
+                         <img src="assets/images/ibet.png" width="150px" height="80px">
+                       </div>
+                       <div class="col-8">
+                         <div class="row">
+                           <div class="col-6 text-center">
+                             <span class="title-modal">Ngày-Giờ:</span><br>
+                             <p> 12/09/2022 <br> 11:21:03</p>
+                             
+                           </div>
+                           <div class="col-6 text-center">
+                             <span class="title-modal">Trận đấu:</span><br>
+                             <p> M.U <br>Chelsea</p>
+                             
+                           </div>
+                           <div class="col-6 text-center">
+                             <span class="title-modal">Tỉ lệ cược:</span><br>
+                               <p>15%</p>
+                           </div>
+                           <div class="col-6 text-center">
+                             <span class="title-modal">Trạng thái:</span><br>
+                               <p> Đang hoạt động</p>
+                             
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+
+                   <!--Footer-->
+                   <div class="modal-footer flex-center">
+                     <!-- <a href="https://mdbootstrap.com/docs/standard/pro/" class="btn btn-danger">Đóng
+                       <i class="far fa-gem ml-1 white-text"></i>
+                     </a> -->
+                     <a type="button" class="btn btn-danger color-close" data-dismiss="modal">Đóng</a>
+                   </div>
+                 </div>
+                 <!--/.Content-->
+               </div>
+              </div>
+
+               <!-- modal chi tiet 8PLATINUM.COM	 -->
+               <div class="modal fade right" id="modaldetail-8platinum" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+                <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading">Chi tiết</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text custom-close">&times;</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-4 pd-r-0">
+                          <br>
+                          <img src="assets/images/8platinum.png" width="150px" height="80px">
+                        </div>
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Ngày-Giờ:</span><br>
+                              <p> 12/09/2022 <br> 11:21:03</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trận đấu:</span><br>
+                              <p> M.U <br>Chelsea</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Tỉ lệ cược:</span><br>
+                                <p>15%</p>
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trạng thái:</span><br>
+                                <p> Đang hoạt động</p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer flex-center">
+                      <!-- <a href="https://mdbootstrap.com/docs/standard/pro/" class="btn btn-danger">Đóng
+                        <i class="far fa-gem ml-1 white-text"></i>
+                      </a> -->
+                      <a type="button" class="btn btn-danger color-close" data-dismiss="modal">Đóng</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+
+              <!-- modal chi tiet ALLWAGERS247.COM -->
+              <div class="modal fade right" id="modaldetail-allwagers247" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+                <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading">Chi tiết</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text custom-close">&times;</span>
+                      </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-4 pd-r-0">
+                          <br>
+                          <img src="assets/images/allwagers247_logo.png" width="150px" height="80px">
+                        </div>
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Ngày-Giờ:</span><br>
+                              <p> 12/09/2022 <br> 11:21:03</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trận đấu:</span><br>
+                              <p> M.U <br>Chelsea</p>
+                              
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Tỉ lệ cược:</span><br>
+                                <p>15%</p>
+                            </div>
+                            <div class="col-6 text-center">
+                              <span class="title-modal">Trạng thái:</span><br>
+                                <p> Đang hoạt động</p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer flex-center">
+                      <!-- <a href="https://mdbootstrap.com/docs/standard/pro/" class="btn btn-danger">Đóng
+                        <i class="far fa-gem ml-1 white-text"></i>
+                      </a> -->
+                      <a type="button" class="btn btn-danger color-close" data-dismiss="modal">Đóng</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+
+
+
+              <div class="modal fade modal-shortcut modal-slide" id="shorcut-menu" tabindex="-1" role="dialog"
+                aria-labelledby="defaultModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-shortcut-menu" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading" id="defaultModalLabel">Menu</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body px-5">
+                      <div class="row align-items-center">
+                        <div class="col-6 text-center">
+                          <div class="squircle bg-success justify-content-center" id="bets-money" data-toggle="modal"
+                            data-target=".modal-best">
+                            <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
+                          </div>
+                          <p>Chi phí Bets</p>
+                        </div>
+                        <div class="col-6 text-center" data-toggle="modal" data-target=".modal-banking">
+                          <div class="squircle bg-primary justify-content-center">
+                            <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                          </div>
+                          <p>Lịch sử giao dịch</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade modal-notif modal-best modal-slide" tabindex="-1" role="dialog"
+                aria-labelledby="defaultModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading" id="defaultModalLabel">Chi phí Bets</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body bets-modal-body" id="webkit">
+                      <div class="list-group list-group-flush my-n3">
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/liveaction_logo.png" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $120.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $30.00</div>
+                              <div class="my-0 text-muted small">Thắng: $50.00</div>
+                              <div class="my-0 text-muted small">Thua: $10.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/pig11_logo.png" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $130.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $90.00</div>
+                              <div class="my-0 text-muted small">Thắng: $60.00</div>
+                              <div class="my-0 text-muted small">Thua: $30.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/3fun_logo.png" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $80.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $80.00</div>
+                              <div class="my-0 text-muted small">Thắng: $20.00</div>
+                              <div class="my-0 text-muted small">Thua: $30.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/SBOBET_company_logo.jpg" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $90.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $40.00</div>
+                              <div class="my-0 text-muted small">Thắng: $50.00</div>
+                              <div class="my-0 text-muted small">Thua: $30.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/2bet.png" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $120.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $50.00</div>
+                              <div class="my-0 text-muted small">Thắng: $100.00</div>
+                              <div class="my-0 text-muted small">Thua: $12.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/playsport-365.png" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $210.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $20.00</div>
+                              <div class="my-0 text-muted small">Thắng: $50.00</div>
+                              <div class="my-0 text-muted small">Thua: $10.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/ibet.png" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $320.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $34.00</div>
+                              <div class="my-0 text-muted small">Thắng: $68.00</div>
+                              <div class="my-0 text-muted small">Thua: $5.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/8platinum.png" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $100.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $20.00</div>
+                              <div class="my-0 text-muted small">Thắng: $50.00</div>
+                              <div class="my-0 text-muted small">Thua: $10.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/allwagers247_logo.png" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $320.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $25.00</div>
+                              <div class="my-0 text-muted small">Thắng: $50.00</div>
+                              <div class="my-0 text-muted small">Thua: $30.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/5plays_logo.png" width="100px" height="80px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Tổng: $70.00</strong></small>
+                              <div class="my-0 text-muted small">Đang cược: $20.00</div>
+                              <div class="my-0 text-muted small">Thắng: $40.00</div>
+                              <div class="my-0 text-muted small">Thua: $10.00</div>
+                              <div class="badge badge-pill badge-light text-muted custom-badge">Tháng 1</div>
+                            </div>
+                          </div>
+                        </div> <!-- / .row -->
+                      </div> <!-- / .list-group -->
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Đóng</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade modal-notif modal-banking modal-slide" tabindex="-1" role="dialog"
+                aria-labelledby="defaultModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header custom-header-modal">
+                      <div class="heading" id="defaultModalLabel">Lịch sử giao dịch</div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body bets-modal-body" id="webkit">
+                      <div class="list-group list-group-flush my-n3">
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/liveaction_logo.png" width="80px" height="50px"><br>
+                              <img src="assets/images/Manchester-United-logo.png" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/Chelsea_FC.svg.png" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 12-09-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải ngoại hạng Anh</div>
+                              <div class="my-0 text-muted small">Trận: M.U vs Chelsea</div>
+                              <div class="my-0 text-muted small">Đã cược: $180.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 2.85</div>
+                              <div class="my-0 text-muted small">Thắng: $50.00</div>
+                              <div class="my-0 text-muted small">Thua: $30.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/pig11_logo.png" width="80px" height="50px"><br>
+                              <img src="assets/images/qata.jpg" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/ecuador.jpg" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 12-10-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải World Cup</div>
+                              <div class="my-0 text-muted small">Trận: Qatar vs Ecuador</div>
+                              <div class="my-0 text-muted small">Đã cược: $190.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 3.85</div>
+                              <div class="my-0 text-muted small">Thắng: $70.00</div>
+                              <div class="my-0 text-muted small">Thua: $20.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/3fun_logo.png" width="80px" height="50px"><br>
+                              <img src="assets/images/liverpool.png" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/Real_Madrid.png" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 13-10-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải World Cup</div>
+                              <div class="my-0 text-muted small">Trận: Liverpool vs Real Madrid</div>
+                              <div class="my-0 text-muted small">Đã cược: $290.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 3.80</div>
+                              <div class="my-0 text-muted small">Thắng: $60.00</div>
+                              <div class="my-0 text-muted small">Thua: $30.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/SBOBET_company_logo.jpg" width="80px" height="50px"><br>
+                              <img src="assets/images/hoaky.jpg" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/wales.png" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 14-10-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải World Cup</div>
+                              <div class="my-0 text-muted small">Trận: Hoa Kỳ vs Wales</div>
+                              <div class="my-0 text-muted small">Đã cược: $150.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 2.65</div>
+                              <div class="my-0 text-muted small">Thắng: $60.00</div>
+                              <div class="my-0 text-muted small">Thua: $10.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/2bet.png" width="80px" height="50px"><br>
+                              <img src="assets/images/sene.png" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/ha-lan.jpg" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 15-10-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải World Cup</div>
+                              <div class="my-0 text-muted small">Trận: Sénégal vs Hà Lan</div>
+                              <div class="my-0 text-muted small">Đã cược: $150.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 3.20</div>
+                              <div class="my-0 text-muted small">Thắng: $90.00</div>
+                              <div class="my-0 text-muted small">Thua: $60.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/playsport-365.png" width="80px" height="50px"><br>
+                              <img src="assets/images/Fulham_FC.png" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/m.u.png" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 16-10-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải Ngoại hạng Anh</div>
+                              <div class="my-0 text-muted small">Trận: Fulham vs M.U</div>
+                              <div class="my-0 text-muted small">Đã cược: $120.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 3.25</div>
+                              <div class="my-0 text-muted small">Thắng: $60.00</div>
+                              <div class="my-0 text-muted small">Thua: $30.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/ibet.png" width="80px" height="50px"><br>
+                              <img src="assets/images/wolves.png" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/Arsenal_FC.svg" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 17-10-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải Ngoại hạng Anh</div>
+                              <div class="my-0 text-muted small">Trận: Wolves vs Arsenal</div>
+                              <div class="my-0 text-muted small">Đã cược: $155.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 3.30</div>
+                              <div class="my-0 text-muted small">Thắng: $60.00</div>
+                              <div class="my-0 text-muted small">Thua: $20.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/8platinum.png" width="80px" height="50px"><br>
+                              <img src="assets/images/Manchester_City_FC_logo.svg" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/Brentford_FC_crest.svg.png" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 18-10-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải Ngoại hạng Anh</div>
+                              <div class="my-0 text-muted small">Trận: Man City vs Brentford</div>
+                              <div class="my-0 text-muted small">Đã cược: $200.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 3.35</div>
+                              <div class="my-0 text-muted small">Thắng: $68.00</div>
+                              <div class="my-0 text-muted small">Thua: $15.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/allwagers247_logo.png" width="80px" height="50px"><br>
+                              <img src="assets/images/Newcastle_United_Logo.svg.png" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/Chelsea_FC.svg.png" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 19-10-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải Ngoại hạng Anh</div>
+                              <div class="my-0 text-muted small">Trận: Newcastle vs Chelsea</div>
+                              <div class="my-0 text-muted small">Đã cược: $215.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 3.10</div>
+                              <div class="my-0 text-muted small">Thắng: $80.00</div>
+                              <div class="my-0 text-muted small">Thua: $30.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-group-item bg-transparent">
+                          <div class="row align-items-center">
+                            <div class="col-auto pd-0">
+                              <img src="assets/images/5plays_logo.png" width="80px" height="50px"><br>
+                              <img src="assets/images/Real_Madrid_CF.svg.png" class="mt-1" width="40px" height="40px">
+                              <img src="assets/images/Cádiz_CF_logo.svg.png" class="mt-1" width="40px" height="40px">
+                            </div>
+                            <div class="col pd-r-0">
+                              <small><strong>Thời gian cược: 20-10-2022</strong></small>
+                              <div class="my-0 text-muted small">Giải Ngoại hạng Đức</div>
+                              <div class="my-0 text-muted small">Trận: Real Madrid vs Cádiz</div>
+                              <div class="my-0 text-muted small">Đã cược: $205.00</div>
+                              <div class="my-0 text-muted small">Tỉ lệ cược: 3.65</div>
+                              <div class="my-0 text-muted small">Thắng: $90.00</div>
+                              <div class="my-0 text-muted small">Thua: $10.00</div>
+                            </div>
+                          </div>
+                        </div> <!-- / .row -->
+                      </div> <!-- / .list-group -->
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Đóng</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </main>
+
+      </div>
+
+      <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
+        Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure
+        adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet
+        duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit
+        sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis
+        occaecat ex.
+        áddsa
+        Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
+        Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure
+        adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet
+        duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit
+        sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis
+        occaecat ex.
+      </div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
+        Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure
+        adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet
+        duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit
+        sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis
+        occaecat ex.
+      </div>
+      <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+        Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
+        Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure
+        adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet
+        duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit
+        sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis
+        occaecat ex.
+      </div> -->
+
+      <!-- main -->
+    </div> <!-- .wrapper -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/simplebar.min.js"></script>
+    <script src='js/daterangepicker.js'></script>
+    <script src='js/jquery.stickOnScroll.js'></script>
+    <script src="js/tinycolor-min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/topojson.min.js"></script>
+    <script src="js/datamaps.all.min.js"></script>
+    <script src="js/datamaps-zoomto.js"></script>
+    <script src="js/datamaps.custom.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script>
+      /* defind global options */
+      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+      Chart.defaults.global.defaultFontColor = colors.mutedColor;
+    </script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
+    <script src="js/apexcharts.min.js"></script>
+    <script src="js/apexcharts.custom.js"></script>
+    <script src='js/jquery.mask.min.js'></script>
+    <script src='js/select2.min.js'></script>
+    <script src='js/jquery.steps.min.js'></script>
+    <script src='js/jquery.validate.min.js'></script>
+    <script src='js/jquery.timepicker.js'></script>
+    <script src='js/dropzone.min.js'></script>
+    <script src='js/uppy.min.js'></script>
+    <script src='js/quill.min.js'></script>
+    <script src='js/custom.js'></script>
+    <script>
+      $(document).ready(function () {
+        $(".left-header").click(function () {
+          $(".custom-ul-dropdown").slideToggle();
+        });
+      });
+      $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      // $(document).ready(function() {
+      //       $('home.htmlshorcut-menu').click(function() {
+      //           $('.squircle').addClass('.modal-best');
+      //           $('.squircle').removeClass('.modal-shortcut');
+      //       });
+      //   });
+      // $( ".align-self-center" ).even().removeClass( "modal-shortcut-menu" );
+    </script>
+    <script>
+      $('.select2').select2(
+        {
+          theme: 'bootstrap4',
+        });
+      $('.select2-multi').select2(
+        {
+          multiple: true,
+          theme: 'bootstrap4',
+        });
+      $('.drgpicker').daterangepicker(
+        {
+          singleDatePicker: true,
+          timePicker: false,
+          showDropdowns: true,
+          locale:
+          {
+            format: 'MM/DD/YYYY'
+          }
+        });
+      $('.time-input').timepicker(
+        {
+          'scrollDefault': 'now',
+          'zindex': '9999' /* fix modal open */
+        });
+      /** date range picker */
+      if ($('.datetimes').length) {
+        $('.datetimes').daterangepicker(
+          {
+            timePicker: true,
+            startDate: moment().startOf('hour'),
+            endDate: moment().startOf('hour').add(32, 'hour'),
+            locale:
+            {
+              format: 'M/DD hh:mm A'
+            }
+          });
+      }
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end) {
+        $('home.htmlreportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+      $('home.htmlreportrange').daterangepicker(
+        {
+          startDate: start,
+          endDate: end,
+          ranges:
+          {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          }
+        }, cb);
+      cb(start, end);
+      $('.input-placeholder').mask("00/00/0000",
+        {
+          placeholder: "__/__/____"
+        });
+      $('.input-zip').mask('00000-000',
+        {
+          placeholder: "____-___"
+        });
+      $('.input-money').mask("home.html.home.htmlhome.html0,00",
+        {
+          reverse: true
+        });
+      $('.input-phoneus').mask('(000) 000-0000');
+      $('.input-mixed').mask('AAA 000-S0S');
+      $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
+        {
+          translation:
+          {
+            'Z':
+            {
+              pattern: /[0-9]/,
+              optional: true
+            }
+          },
+          placeholder: "___.___.___.___"
+        });
+      // editor
+      var editor = document.getElementById('editor');
+      if (editor) {
+        var toolbarOptions = [
+          [
+            {
+              'font': []
+            }],
+          [
+            {
+              'header': [1, 2, 3, 4, 5, 6, false]
+            }],
+          ['bold', 'italic', 'underline', 'strike'],
+          ['blockquote', 'code-block'],
+          [
+            {
+              'header': 1
+            },
+            {
+              'header': 2
+            }],
+          [
+            {
+              'list': 'ordered'
+            },
+            {
+              'list': 'bullet'
+            }],
+          [
+            {
+              'script': 'sub'
+            },
+            {
+              'script': 'super'
+            }],
+          [
+            {
+              'indent': '-1'
+            },
+            {
+              'indent': '+1'
+            }], // outdent/indent
+          [
+            {
+              'direction': 'rtl'
+            }], // text direction
+          [
+            {
+              'color': []
+            },
+            {
+              'background': []
+            }], // dropdown with defaults from theme
+          [
+            {
+              'align': []
+            }],
+          ['clean'] // remove formatting button
+        ];
+        var quill = new Quill(editor,
+          {
+            modules:
+            {
+              toolbar: toolbarOptions
+            },
+            theme: 'snow'
+          });
+      }
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+    <script>
+      var uptarg = document.getElementById('drag-drop-area');
+      if (uptarg) {
+        var uppy = Uppy.Core().use(Uppy.Dashboard,
+          {
+            inline: true,
+            target: uptarg,
+            proudlyDisplayPoweredByUppy: false,
+            theme: 'dark',
+            width: 770,
+            height: 210,
+            plugins: ['Webcam']
+          }).use(Uppy.Tus,
+            {
+              endpoint: 'https://master.tus.io/files/'
+            });
+        uppy.on('complete', (result) => {
+          console.log('Upload complete! We’ve uploaded these files:', result.successful)
+        });
+      }
+    </script>
+    <script src="js/apps.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-56159088-1');
+    </script>
+</body>
+
+</html>

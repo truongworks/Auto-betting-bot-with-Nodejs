@@ -1,4 +1,4 @@
 # demo - scrapy framework
 Request:
   1. Auto login
-  2. Crawl data
+  2. Bet according to the script
